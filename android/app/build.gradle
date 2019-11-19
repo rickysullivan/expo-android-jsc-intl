@@ -98,7 +98,6 @@ configurations.all {
   }
 }
 
-
 // WHEN_PREPARING_SHELL_REMOVE_FROM_HERE
 
 apply from: 'expo.gradle'
