@@ -90,9 +90,14 @@ devicefarm {
 
 configurations.all {
   resolutionStrategy {
-    force 'org.webkit:android-jsc:r245459'
+    eachDependency { DependencyResolveDetails details ->
+      if (details.requested.name == 'android-jsc') {
+        details.useTarget group: details.requested.group, name: 'android-jsc-intl', version: 'r245459'
+      }
+    }
   }
 }
+
 
 // WHEN_PREPARING_SHELL_REMOVE_FROM_HERE
 
